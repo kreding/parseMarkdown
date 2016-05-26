@@ -32,7 +32,11 @@ router.get('/', function(req, res, next) {
             marked(data.toString(), function(err, content) {
                 if (err || isOrgin)
                     content = data;
-                res.send(content + css);
+               // res.send(content + css);
+                res.render('markdown', {
+                    content: content,
+                    title: "The way to go"
+                });
 
             });
         }
